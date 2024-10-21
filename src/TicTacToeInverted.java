@@ -1,2 +1,2 @@
-public class TicTacToeInverted extends Game{
+public class TicTacToeInverted {
 }

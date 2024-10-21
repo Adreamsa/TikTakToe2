@@ -1,9 +1,9 @@
-abstract class Game {
-    void nextTurn() {
+public abstract class Game {
 
-    }
+    public abstract void initializeGame();
 
-    boolean isGameOver() {
-        return false;
-    }
+    public abstract void nextTurn(Player player);
+
+    public abstract void isGameOver();
+
 }
