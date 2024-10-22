@@ -16,6 +16,10 @@ public class TicTacToeNormal extends Game {
         board.initializeGame();
     }
 
+    public void playGame(){
+
+    }
+
     @Override
     public void nextTurn(Player player) {
         currentPlayer = (currentPlayer == player1) ? player2 : player1;

@@ -5,8 +5,6 @@ public class Board {
     public Board(int boardSize) {
         this.boardSize = boardSize;
         board = new char[boardSize][boardSize];
-        initializeGame();
-        drawBoard();
     }
 
     // Inicializa el tablero
