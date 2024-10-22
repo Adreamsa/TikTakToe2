@@ -1,5 +1,5 @@
 public class Player {
-    private char symbol;
+    private final char symbol;
     private final String name;
 
     public Player(String name, char symbol) {

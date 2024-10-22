@@ -18,7 +18,7 @@ public class TicTacToeNormal extends Game {
 
     @Override
     public void nextTurn(Player player) {
-        // Implementación para los turnos
+        currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
 
     @Override

@@ -9,10 +9,11 @@ public class Main {
         Player player1 = new Player(answerName(), 'X');
         Player player2 = new Player(answerName(), 'Y');
         if (answerRules()){
-            //game = TicTacToeInverted(answerSize());
+            TicTacToeInverted game = new TicTacToeInverted(answerSize(), player1, player2);
+            game.initializeGame();
         } else {
             TicTacToeNormal game = new TicTacToeNormal(answerSize(), player1, player2);
-            game.initializeGame();
+
         }
     }
 
