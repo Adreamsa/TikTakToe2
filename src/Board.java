@@ -7,6 +7,14 @@ public class Board {
         board = new char[boardSize][boardSize];
     }
 
+    public char[][] getBoard(){
+        return board;
+    }
+
+    public int getSize(){
+        return boardSize;
+    }
+
     // Inicializa el tablero
     public void initializeGame() {
         for (int i = 0; i < boardSize; i++) {

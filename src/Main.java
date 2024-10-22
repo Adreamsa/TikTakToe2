@@ -7,12 +7,15 @@ public class Main {
     public static void main(String[] args) {
 
         Player player1 = new Player(answerName(), 'X');
-        Player player2 = new Player(answerName(), 'Y');
+        Player player2 = new Player(answerName(), 'O');
         if (answerRules()){
             TicTacToeInverted game = new TicTacToeInverted(answerSize(), player1, player2);
+            game.initializeGame();
+            game.playGame();
         } else {
             TicTacToeNormal game = new TicTacToeNormal(answerSize(), player1, player2);
-            //game.initializeGame();
+            game.initializeGame();
+            game.playGame();
 
         }
     }
@@ -20,7 +23,7 @@ public class Main {
     public static boolean answerRules() {
         String rules = "";
         while (true) {
-            System.out.println("¿Desea jugar con las reglas especiales?\nSi.\nNo.\n");
+            System.out.println("¿Desea jugar con las reglas especiales?\nSi.\nNo.");
             rules = scan.next();
             if ("Si".equalsIgnoreCase(rules) || "s".equalsIgnoreCase(rules)) {
                 return true;
@@ -48,7 +51,7 @@ public class Main {
     }
 
     public static String answerName(){
-        System.out.println("Escribe tu nombre: ");
+        System.out.print("Escribe tu nombre: ");
         return scan.next();
     }
 }

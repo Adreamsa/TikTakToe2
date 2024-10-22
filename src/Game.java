@@ -4,6 +4,6 @@ public abstract class Game {
 
     public abstract void nextTurn(Player player);
 
-    public abstract void isGameOver();
+    public abstract boolean isGameOver();
 
 }
