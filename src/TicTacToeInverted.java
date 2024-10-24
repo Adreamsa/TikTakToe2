@@ -16,7 +16,6 @@ public class TicTacToeInverted extends Game {
     @Override
     public void initializeGame() {
         board.initializeGame();
-
     }
 
     public void playGame() {
@@ -25,7 +24,7 @@ public class TicTacToeInverted extends Game {
             int[] input = validateInput();
             board.updateBoard(input[0], input[1], currentPlayer.getSymbol());
             board.drawBoard();
-            if (isGameOver()){
+            if (isGameOver()) {
                 break;
             }
 
@@ -39,7 +38,7 @@ public class TicTacToeInverted extends Game {
             System.out.print("Jugador " + currentPlayer.getName() + ", ingresa tu movimiento (fila y columna): ");
             String inputRow = scanner.next();
             String inputCol = scanner.next();
-            if (validateRange(inputRow, inputCol) && validateRange(inputRow, inputCol)) {
+            if (validateRange(inputRow, inputCol) && validateRange(inputRow, inputCol) && validatePull(inputRow, inputCol)) {
                 return new int[]{Integer.parseInt(inputRow) - 1, Integer.parseInt(inputCol) - 1};
             } else {
                 System.out.println("Datos incorrectos intenta de nuevo");
@@ -56,6 +55,12 @@ public class TicTacToeInverted extends Game {
         int intCol = Integer.parseInt(inputCol);
         return (intRow >= 1 && intRow <= board.getSize()) && (intCol >= 1 && intCol <= board.getSize());
 
+    }
+
+    private boolean validatePull(String inputRow, String inputCol) {
+        int intRow = Integer.parseInt(inputRow) - 1;
+        int intCol = Integer.parseInt(inputCol) - 1;
+        return board.getBoard()[intRow][intCol] == '-';
     }
 
     @Override
