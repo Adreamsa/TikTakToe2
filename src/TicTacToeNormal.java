@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class TicTacToeNormal extends Game {
-    private Board board;
-    private Player currentPlayer;
-    private Player player1;
-    private Player player2;
+public class TicTacToeNormal implements Game {
+    Board board;
+    Player currentPlayer;
+    Player player1;
+    Player player2;
 
     public TicTacToeNormal(int boardSize, Player player1, Player player2) {
         this.board = new Board(boardSize);
@@ -38,7 +38,7 @@ public class TicTacToeNormal extends Game {
             System.out.print("Jugador " + currentPlayer.getName() + ", ingresa tu movimiento (fila y columna): ");
             String inputRow = scanner.next();
             String inputCol = scanner.next();
-            if (validateRange(inputRow, inputCol) && validateRange(inputRow, inputCol) && validatePull(inputRow, inputCol)) {
+            if (isNumber(inputRow, inputCol) && validateRange(inputRow, inputCol) && validatePull(inputRow, inputCol)) {
                 return new int[]{Integer.parseInt(inputRow) - 1, Integer.parseInt(inputCol) - 1};
             } else {
                 System.out.println("Datos incorrectos intenta de nuevo");
@@ -47,7 +47,7 @@ public class TicTacToeNormal extends Game {
     }
 
     private boolean isNumber(String inputRow, String inputCol) {
-        return inputRow.matches("\\d+") || inputCol.matches("\\d+");
+        return inputRow.matches("\\d+") && inputCol.matches("\\d+");
     }
 
     private boolean validateRange(String inputRow, String inputCol) {
