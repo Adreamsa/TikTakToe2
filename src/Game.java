@@ -1,9 +1,9 @@
-public interface Game {
+public abstract class Game {
 
-    void initializeGame();
+    public abstract void initializeGame();
 
-    void nextTurn(Player player);
+    public abstract void nextTurn(Player player);
 
-    boolean isGameOver();
+    public abstract boolean isGameOver();
 
 }
