@@ -39,7 +39,7 @@ public class TicTacToeInverted implements Game {
             String inputRow = scanner.next();
             String inputCol = scanner.next();
             // if update
-            if (validatePull(inputRow, inputCol)) {
+            if (validatePull(inputRow, inputCol) ) {
                 return new int[]{Integer.parseInt(inputRow) - 1, Integer.parseInt(inputCol) - 1};
             } else {
                 System.out.println("Datos incorrectos intenta de nuevo");
@@ -51,7 +51,7 @@ public class TicTacToeInverted implements Game {
     private boolean validatePull(String inputRow, String inputCol) {
         int intRow = Integer.parseInt(inputRow) - 1;
         int intCol = Integer.parseInt(inputCol) - 1;
-        return intRow >= 0 && intRow <= board.getSize() && intCol >= 0 && intCol <= board.getSize() && board.getBoard()[intRow][intCol] == '-';
+        return inputRow.matches("\\d+") && inputCol.matches("\\d+") && intRow >= 0 && intRow <= board.getSize() && intCol >= 0 && intCol <= board.getSize() && board.getBoard()[intRow][intCol] == '-';
     }
 
     @Override
